@@ -1,0 +1,733 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" translate="no">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="google" content="notranslate">
+    <title>الشركة الحديثة للبصريات (اوبتيمود) | Modern Optics (Optimode)</title>
+    <style>
+        :root {
+            --medical-primary: #0b5ed7;
+            --medical-dark: #084298;
+            --medical-teal: #0d9488;
+            --medical-bg: #f2f7fa;
+            --medical-card: #ffffff;
+            --medical-border: #dce8f0;
+            --text-main: #1e293b;
+            --text-muted: #526071;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--medical-bg);
+            margin: 0;
+            padding: 0;
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        .top-bar {
+            background-color: #072d5e;
+            color: #e2e8f0;
+            font-size: 13px;
+            padding: 8px 20px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 18px;
+        }
+
+        .top-bar span {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        header {
+            background: linear-gradient(135deg, #0b5ed7 0%, #0d9488 100%);
+            color: #ffffff;
+            text-align: center;
+            padding: 38px 20px;
+            box-shadow: 0 4px 14px rgba(11, 94, 215, 0.16);
+        }
+
+        header h1 {
+            margin: 0 0 8px 0;
+            font-size: 28px;
+            font-weight: 700;
+        }
+
+        header p {
+            margin: 4px 0;
+            font-size: 15px;
+            opacity: 0.96;
+        }
+
+        .badges-row {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 12px;
+        }
+
+        .moh-badge {
+            display: inline-block;
+            background-color: rgba(255, 255, 255, 0.18);
+            padding: 6px 18px;
+            border-radius: 25px;
+            font-size: 13px;
+            font-weight: 600;
+            border: 1px solid rgba(255, 255, 255, 0.45);
+        }
+
+        .lang-btn {
+            margin-top: 16px;
+            background-color: #ffffff;
+            color: var(--medical-dark);
+            border: none;
+            padding: 9px 22px;
+            border-radius: 22px;
+            font-weight: 700;
+            font-size: 14px;
+            cursor: pointer;
+            box-shadow: 0 3px 8px rgba(0, 0, 0, 0.14);
+            transition: transform 0.2s ease, background-color 0.2s ease;
+        }
+
+        .lang-btn:hover {
+            background-color: #eef6ff;
+            transform: translateY(-1px);
+        }
+
+        .brand-nav {
+            background-color: #ffffff;
+            padding: 12px 20px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+            border-bottom: 1px solid var(--medical-border);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 8px rgba(15, 23, 42, 0.04);
+        }
+
+        .brand-nav a {
+            text-decoration: none;
+            color: var(--medical-dark);
+            background-color: #edf5fc;
+            padding: 7px 16px;
+            border-radius: 18px;
+            font-size: 14px;
+            font-weight: 600;
+            border: 1px solid #cfe2f5;
+            transition: all 0.2s ease;
+        }
+
+        .brand-nav a:hover {
+            background-color: var(--medical-primary);
+            color: #ffffff;
+            border-color: var(--medical-primary);
+        }
+
+        .container {
+            max-width: 1140px;
+            margin: 32px auto;
+            padding: 0 20px;
+        }
+
+        .brand-section {
+            margin-bottom: 46px;
+        }
+
+        .brand-title {
+            font-size: 22px;
+            color: var(--medical-dark);
+            border-bottom: 2px solid var(--medical-teal);
+            padding-bottom: 8px;
+            margin-bottom: 22px;
+            display: inline-block;
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(295px, 1fr));
+            gap: 24px;
+        }
+
+        .card {
+            background-color: var(--medical-card);
+            border-radius: 14px;
+            padding: 18px;
+            box-shadow: 0 4px 14px rgba(15, 23, 42, 0.05);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            border: 1px solid var(--medical-border);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 20px rgba(11, 94, 215, 0.1);
+        }
+
+        .img-box {
+            width: 100%;
+            height: 205px;
+            background-color: #ffffff;
+            border: 1px solid #e6eff5;
+            border-radius: 10px;
+            margin-bottom: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 13px;
+            padding: 10px;
+        }
+
+        .img-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 4px 12px;
+            border-radius: 16px;
+            font-size: 12px;
+            font-weight: 700;
+            margin-bottom: 10px;
+            width: fit-content;
+        }
+
+        .badge-yearly {
+            background-color: #dcfce7;
+            color: #166534;
+        }
+
+        .badge-monthly {
+            background-color: #fef3c7;
+            color: #92400e;
+        }
+
+        .badge-daily {
+            background-color: #e0f2fe;
+            color: #075985;
+        }
+
+        .badge-special {
+            background-color: #f3e8ff;
+            color: #6b21a8;
+        }
+
+        .product-name {
+            font-size: 18px;
+            margin: 0 0 10px 0;
+            color: var(--text-main);
+            font-weight: 700;
+        }
+
+        .specs {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 18px 0;
+            font-size: 13.5px;
+            color: var(--text-muted);
+        }
+
+        .specs li {
+            margin-bottom: 6px;
+        }
+
+        .specs li::before {
+            content: "• ";
+            color: var(--medical-teal);
+            font-weight: bold;
+        }
+
+        .order-btn {
+            display: block;
+            text-align: center;
+            background-color: #16a34a;
+            color: #ffffff;
+            text-decoration: none;
+            padding: 11px 14px;
+            border-radius: 8px;
+            font-weight: 700;
+            font-size: 15px;
+            transition: background-color 0.2s ease;
+        }
+
+        .order-btn:hover {
+            background-color: #15803d;
+        }
+
+        footer {
+            background-color: #072d5e;
+            color: #f8fafc;
+            padding: 36px 20px;
+            margin-top: 50px;
+            border-top: 4px solid var(--medical-teal);
+        }
+
+        .footer-grid {
+            max-width: 1140px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+            gap: 24px;
+        }
+
+        .branch-card {
+            background-color: rgba(255, 255, 255, 0.06);
+            border: 1px solid rgba(255, 255, 255, 0.14);
+            border-radius: 12px;
+            padding: 18px;
+        }
+
+        .branch-card h3 {
+            margin: 0 0 10px 0;
+            font-size: 18px;
+            color: #7dd3fc;
+        }
+
+        .branch-card p {
+            margin: 6px 0;
+            font-size: 14px;
+            color: #e2e8f0;
+        }
+
+        .branch-card a {
+            color: #86efac;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .branch-card a:hover {
+            text-decoration: underline;
+        }
+
+        .footer-bottom {
+            max-width: 1140px;
+            margin: 24px auto 0 auto;
+            padding-top: 16px;
+            border-top: 1px solid rgba(255, 255, 255, 0.14);
+            text-align: center;
+            font-size: 13px;
+            color: #cbd5e1;
+        }
+
+        html[lang="ar"] .en { display: none; }
+        html[lang="en"] .ar { display: none; }
+    </style>
+</head>
+<body>
+
+    <div class="top-bar">
+        <span>
+            <span class="ar">واتساب الطلبات: <strong dir="ltr">01013369079</strong></span>
+            <span class="en">Order WhatsApp: <strong dir="ltr">01013369079</strong></span>
+        </span>
+        <span>
+            <span class="ar">واتساب وفون: <strong dir="ltr">01225733855</strong></span>
+            <span class="en">WhatsApp &amp; Phone: <strong dir="ltr">01225733855</strong></span>
+        </span>
+        <span>
+            <span class="ar">متوفرة لدى مراكز وأطباء ومستشفيات العيون</span>
+            <span class="en">Available at Eye Centers, Ophthalmologists &amp; Eye Hospitals</span>
+        </span>
+    </div>
+
+    <header>
+        <h1>
+            <span class="ar">الشركة الحديثة للبصريات (اوبتيمود)</span>
+            <span class="en">Modern Optics Company (Optimode)</span>
+        </h1>
+        <p>
+            <span class="ar">أفضل البراندات العالمية الأصلية لراحة ورؤية طبية واضحة لعينيك</span>
+            <span class="en">Original International Brands for Clear &amp; Comfortable Vision</span>
+        </p>
+        <div class="badges-row">
+            <div class="moh-badge">
+                <span class="ar">🛡️ جميع المنتجات أصلية ومسجلة بوزارة الصحة المصرية</span>
+                <span class="en">🛡️ All Products Are Original and Registered with the Ministry of Health</span>
+            </div>
+            <div class="moh-badge">
+                <span class="ar">🏥 متوفرة لدى مراكز وأطباء ومستشفيات العيون</span>
+                <span class="en">🏥 Available at Eye Centers, Ophthalmologists &amp; Eye Hospitals</span>
+            </div>
+        </div>
+        <div>
+            <button class="lang-btn" onclick="toggleLang()">
+                <span class="ar">Switch to English</span>
+                <span class="en">التبديل إلى العربية</span>
+            </button>
+        </div>
+    </header>
+
+    <nav class="brand-nav">
+        <a href="#flexcon">Flexcon | فلكسكون</a>
+        <a href="#freshkon">FreshKon | فريش كون</a>
+        <a href="#seed">SEED | سيد اليابانية</a>
+        <a href="#contact-branches">
+            <span class="ar">الفروع والتواصل</span>
+            <span class="en">Branches &amp; Contact</span>
+        </a>
+    </nav>
+
+    <div class="container" id="store-container"></div>
+
+    <footer id="contact-branches">
+        <div class="footer-grid">
+            <div class="branch-card">
+                <h3>
+                    <span class="ar">الفرع الأول</span>
+                    <span class="en">Branch 1</span>
+                </h3>
+                <p>
+                    <span class="ar"><strong>العنوان:</strong> ٣أ شارع سليمان الحلبي أمام صيدلية سنترال رمسيس - القاهرة</span>
+                    <span class="en"><strong>Address:</strong> 3A Soliman El-Halaby St., in front of Central Ramses Pharmacy, Cairo</span>
+                </p>
+                <p>
+                    <span class="ar">أرضي: <strong dir="ltr">0225785804</strong> | <strong dir="ltr">0225751394</strong> | <strong dir="ltr">0225754728</strong></span>
+                    <span class="en">Landlines: <strong dir="ltr">0225785804</strong> | <strong dir="ltr">0225751394</strong> | <strong dir="ltr">0225754728</strong></span>
+                </p>
+                <p>
+                    <span class="ar">موبايل / واتساب: <a href="https://wa.me/201225736353" target="_blank" rel="noopener noreferrer" dir="ltr">+20 12 25736353</a></span>
+                    <span class="en">Mobile / WhatsApp: <a href="https://wa.me/201225736353" target="_blank" rel="noopener noreferrer" dir="ltr">+20 12 25736353</a></span>
+                </p>
+            </div>
+
+            <div class="branch-card">
+                <h3>
+                    <span class="ar">الفرع الثاني</span>
+                    <span class="en">Branch 2</span>
+                </h3>
+                <p>
+                    <span class="ar"><strong>العنوان:</strong> ١١ شارع مشتهر - أمام محطة مترو محمد نجيب القاهرة وسط البلد</span>
+                    <span class="en"><strong>Address:</strong> 11 Moshtohour St., in front of Mohamed Naguib Metro Station, Downtown Cairo</span>
+                </p>
+                <p>
+                    <span class="ar">واتساب وفون: <a href="https://wa.me/201225733855" target="_blank" rel="noopener noreferrer" dir="ltr">01225733855</a></span>
+                    <span class="en">WhatsApp &amp; Phone: <a href="https://wa.me/201225733855" target="_blank" rel="noopener noreferrer" dir="ltr">01225733855</a></span>
+                </p>
+                <p>
+                    <span class="ar">واتساب: <a href="https://wa.me/201013369079" target="_blank" rel="noopener noreferrer" dir="ltr">01013369079</a> | أرضي: <strong dir="ltr">0223959632</strong></span>
+                    <span class="en">WhatsApp: <a href="https://wa.me/201013369079" target="_blank" rel="noopener noreferrer" dir="ltr">01013369079</a> | Landline: <strong dir="ltr">0223959632</strong></span>
+                </p>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <span class="ar">الشركة الحديثة للبصريات (اوبتيمود) — جميع المنتجات مسجلة بوزارة الصحة ومتوفرة لدى مراكز وأطباء ومستشفيات العيون</span>
+            <span class="en">Modern Optics Company (Optimode) — All Products Registered with the Ministry of Health &amp; Available at Eye Centers, Ophthalmologists &amp; Eye Hospitals</span>
+        </div>
+    </footer>
+
+    <script>
+        const whatsappNumber = "201013369079";
+
+        const brands = [
+            {
+                id: "flexcon",
+                titleAr: "براند: فلكسكون (Flexcon)",
+                titleEn: "Brand: Flexcon",
+                items: [
+                    {
+                        img: "images/flexcon-super-thin.jpeg",
+                        badgeClass: "badge-yearly",
+                        badgeAr: "عدسات سنوية",
+                        badgeEn: "Yearly Lenses",
+                        nameAr: "فلكسكون سوبر سن",
+                        nameEn: "Flexcon Super Thin",
+                        specsAr: [
+                            "مدة الاستخدام: سنة كاملة لراحة متواصلة",
+                            "نسبة المياه: 38% للحفاظ على ترطيب العين",
+                            "التصميم: فائقة النحافة لتقليل الاحتكاك بالجفن",
+                            "المميزات: توفر نقاء بصري عالٍ ومناسبة للارتداء اليومي الطويل بدون إجهاد"
+                        ],
+                        specsEn: [
+                            "Duration: Full year for continuous comfort",
+                            "Water Content: 38% to help maintain eye hydration",
+                            "Design: Super-thin profile to reduce eyelid friction",
+                            "Features: High optical clarity for long daily wear without fatigue"
+                        ]
+                    },
+                    {
+                        img: "images/flexcon-re-red.jpeg",
+                        badgeClass: "badge-special",
+                        badgeAr: "لعمى الألوان",
+                        badgeEn: "Color Blindness",
+                        nameAr: "فلكسكون ري ريد (عمى الألوان)",
+                        nameEn: "Flexcon Re-Red (Color Blindness)",
+                        specsAr: [
+                            "مدة الاستخدام: سنوي",
+                            "نسبة المياه: 38% لتأمين ثبات واستقرار وترطيب العدسة",
+                            "التصميم: صبغة خاصة ومدروسة بعناية",
+                            "المميزات: مخصصة لتحسين تمييز الألوان ودعم وضوح الرؤية اللونية"
+                        ],
+                        specsEn: [
+                            "Duration: Yearly",
+                            "Water Content: 38% for optimal lens stability and hydration",
+                            "Design: Specially tinted custom filtration",
+                            "Features: Designed to enhance color differentiation and visual clarity"
+                        ]
+                    }
+                ]
+            },
+            {
+                id: "freshkon",
+                titleAr: "براند: فريش كون (FreshKon)",
+                titleEn: "Brand: FreshKon",
+                items: [
+                    {
+                        img: "images/freshkon-yearly.jpeg",
+                        badgeClass: "badge-yearly",
+                        badgeAr: "عدسات سنوية",
+                        badgeEn: "Yearly Lenses",
+                        nameAr: "فريش كون شفاف - سنوي",
+                        nameEn: "FreshKon Clear - Yearly",
+                        specsAr: [
+                            "مدة الاستخدام: سنة كاملة",
+                            "نسبة المياه: 55% لترطيب مريح ودعم صحة القرنية",
+                            "التصميم: حواف انسيابية لراحة مستمرة طوال اليوم",
+                            "المميزات: نفاذية جيدة للأكسجين، متانة عالية ومقاومة جيدة للترسبات على مدار العام، ومناسبة للاستخدام اليومي المريح"
+                        ],
+                        specsEn: [
+                            "Duration: 1 Year",
+                            "Water Content: 55% for comfortable hydration and corneal support",
+                            "Design: Smooth tapered edges for continuous all-day comfort",
+                            "Features: Good oxygen permeability, high durability and deposit resistance throughout the year, and comfortable daily wear"
+                        ]
+                    },
+                    {
+                        img: "images/freshkon-monthly.jpeg",
+                        badgeClass: "badge-monthly",
+                        badgeAr: "4 شهور للفردة / سنة للبوكس",
+                        badgeEn: "4 Months per Lens / 1 Year per Box",
+                        nameAr: "فريش كون شفاف - شهري",
+                        nameEn: "FreshKon Clear - Monthly",
+                        specsAr: [
+                            "مدة الاستخدام: 4 شهور للفردة والبوكس كامل يكفي سنة",
+                            "محتوى العبوة: 3 عدسات أصلية",
+                            "نسبة المياه: 58% لترطيب عالٍ وتقليل الإحساس بالجفاف",
+                            "المميزات: مرونة مريحة ونفاذية جيدة للأكسجين لصفاء الرؤية"
+                        ],
+                        specsEn: [
+                            "Duration: 4 months per lens (full box lasts 1 year)",
+                            "Pack Size: 3 original lenses",
+                            "Water Content: 58% for high moisture and reduced dryness",
+                            "Features: Comfortable flexibility and good oxygen permeability for clear vision"
+                        ]
+                    },
+                    {
+                        img: "images/eyezpro-medium.jpg",
+                        badgeClass: "badge-special",
+                        badgeAr: "آيز برو - متوسط",
+                        badgeEn: "EyezPro - Medium",
+                        nameAr: "Freshkon eyezpro medium (m)",
+                        nameEn: "Freshkon eyezpro medium (m)",
+                        specsAr: [
+                            "الدرجة: متوسط (Freshkon eyezpro medium (m))",
+                            "الاستخدام: تُستخدم كعدسة تعويضية",
+                            "نسبة المياه: 55% لترطيب متوازن وراحة مستمرة",
+                            "المميزات: ملمس ناعم وراحة في الارتداء اليومي"
+                        ],
+                        specsEn: [
+                            "Shade: Medium (Freshkon eyezpro medium (m))",
+                            "Use: Used as a prosthetic lens",
+                            "Water Content: 55% for balanced hydration and ongoing comfort",
+                            "Features: Smooth texture and comfortable daily wear"
+                        ]
+                    },
+                    {
+                        img: "images/eyezpro-dark.jpg",
+                        badgeClass: "badge-special",
+                        badgeAr: "آيز برو - غامق",
+                        badgeEn: "EyezPro - Dark",
+                        nameAr: "Dark (d)",
+                        nameEn: "Dark (d)",
+                        specsAr: [
+                            "الدرجة: غامق (Dark (d))",
+                            "الاستخدام: تُستخدم كعدسة تعويضية",
+                            "نسبة المياه: 55% لترطيب متوازن وراحة مستمرة",
+                            "المميزات: ملمس ناعم وراحة في الارتداء اليومي"
+                        ],
+                        specsEn: [
+                            "Shade: Dark (Dark (d))",
+                            "Use: Used as a prosthetic lens",
+                            "Water Content: 55% for balanced hydration and ongoing comfort",
+                            "Features: Smooth texture and comfortable daily wear"
+                        ]
+                    },
+                    {
+                        img: "images/eyezpro-extra-dark.jpg",
+                        badgeClass: "badge-special",
+                        badgeAr: "آيز برو - غامق جداً",
+                        badgeEn: "EyezPro - Extra Dark",
+                        nameAr: "Extra dark ( e.d)",
+                        nameEn: "Extra dark ( e.d)",
+                        specsAr: [
+                            "الدرجة: غامق جداً (Extra dark ( e.d))",
+                            "الاستخدام: تُستخدم كعدسة تعويضية",
+                            "نسبة المياه: 55% لترطيب متوازن وراحة مستمرة",
+                            "المميزات: ملمس ناعم وراحة في الارتداء اليومي"
+                        ],
+                        specsEn: [
+                            "Shade: Very dark (Extra dark ( e.d))",
+                            "Use: Used as a prosthetic lens",
+                            "Water Content: 55% for balanced hydration and ongoing comfort",
+                            "Features: Smooth texture and comfortable daily wear"
+                        ]
+                    }
+                ]
+            },
+            {
+                id: "seed",
+                titleAr: "براند: سيد اليابانية (SEED)",
+                titleEn: "Brand: SEED (Japanese)",
+                items: [
+                    {
+                        img: "images/seed-daily.jpeg",
+                        badgeClass: "badge-daily",
+                        badgeAr: "يومي - صناعة يابانية",
+                        badgeEn: "Daily - Made in Japan",
+                        nameAr: "سيد 1 داي بيور (ديلي عادي)",
+                        nameEn: "SEED 1dayPure moisture",
+                        specsAr: [
+                            "مدة الاستخدام: يوم واحد (عدسة جديدة كل يوم)",
+                            "محتوى العبوة: البوكس 32 عدسة",
+                            "نسبة المياه: 58% بترطيب طبيعي لطيف على العين",
+                            "المميزات: صناعة يابانية دقيقة مع حماية من الأشعة فوق البنفسجية UV ومناسبة للعيون الحساسة"
+                        ],
+                        specsEn: [
+                            "Duration: Daily disposable (fresh lens every day)",
+                            "Pack Size: 32 lenses per box",
+                            "Water Content: 58% with gentle natural moisture retention",
+                            "Features: Precision Japanese quality with UV protection, suitable for sensitive eyes"
+                        ]
+                    },
+                    {
+                        img: "images/seed-daily-toric.jpeg",
+                        badgeClass: "badge-special",
+                        badgeAr: "يومي توريك - ياباني",
+                        badgeEn: "Daily Toric - Japan",
+                        nameAr: "سيد 1 داي بيور توريك (ديلي توريك)",
+                        nameEn: "SEED 1dayPure moisture for Astigmatism",
+                        specsAr: [
+                            "مدة الاستخدام: يوم واحد لتصحيح الاستجماتيزم",
+                            "محتوى العبوة: البوكس 32 عدسة",
+                            "نسبة المياه: 58% مع الحفاظ على الترطيب الطبيعي",
+                            "المميزات: صناعة يابانية بثبات عالٍ لتقليل حركة العدسة ومنح رؤية واضحة ومستقرة مع حماية UV"
+                        ],
+                        specsEn: [
+                            "Duration: Daily disposable for astigmatism",
+                            "Pack Size: 32 lenses per box",
+                            "Water Content: 58% with natural moisture retention",
+                            "Features: Japanese quality with high stability to minimize rotation for crisp vision + UV protection"
+                        ]
+                    }
+                ]
+            }
+        ];
+
+        function handleImgError(imgEl) {
+            const extensions = [".jpg", ".jpeg", ".png", ".JPG", ".JPEG", ".PNG"];
+            const currentSrc = imgEl.getAttribute("src");
+            if (!currentSrc) return;
+
+            const dotIndex = currentSrc.lastIndexOf(".");
+            if (dotIndex === -1) return;
+
+            const basePath = currentSrc.substring(0, dotIndex);
+            let step = parseInt(imgEl.getAttribute("data-ext-step") || "0", 10);
+
+            if (step < extensions.length) {
+                imgEl.setAttribute("data-ext-step", String(step + 1));
+                imgEl.src = basePath + extensions[step];
+            } else {
+                imgEl.style.display = "none";
+                if (imgEl.nextElementSibling) {
+                    imgEl.nextElementSibling.style.display = "block";
+                }
+            }
+        }
+
+        function renderStore() {
+            const container = document.getElementById("store-container");
+            if (!container) return;
+
+            container.innerHTML = brands.map(brand => `
+                <section class="brand-section" id="${brand.id}">
+                    <h2 class="brand-title">
+                        <span class="ar">${brand.titleAr}</span>
+                        <span class="en">${brand.titleEn}</span>
+                    </h2>
+                    <div class="products-grid">
+                        ${brand.items.map(item => {
+                            const msg = encodeURIComponent(
+                                "مرحباً، أرغب في طلب عدسات من الشركة الحديثة للبصريات (اوبتيمود): " + item.nameAr + " (" + item.nameEn + ")"
+                            );
+                            return `
+                                <div class="card">
+                                    <div>
+                                        <div class="img-box">
+                                            <img src="${item.img}" alt="${item.nameEn}" onerror="handleImgError(this)">
+                                            <div style="display:none; direction:ltr;">
+                                                <strong>${item.nameEn}</strong><br>
+                                                <small>مسار الصورة المطلوب:<br>${item.img}</small>
+                                            </div>
+                                        </div>
+                                        <span class="badge ${item.badgeClass}">
+                                            <span class="ar">${item.badgeAr}</span>
+                                            <span class="en">${item.badgeEn}</span>
+                                        </span>
+                                        <h3 class="product-name">
+                                            <span class="ar">${item.nameAr}</span>
+                                            <span class="en">${item.nameEn}</span>
+                                        </h3>
+                                        <ul class="specs ar">
+                                            ${item.specsAr.map(s => `<li>${s}</li>`).join("")}
+                                        </ul>
+                                        <ul class="specs en">
+                                            ${item.specsEn.map(s => `<li>${s}</li>`).join("")}
+                                        </ul>
+                                    </div>
+                                    <a href="https://wa.me/${whatsappNumber}?text=${msg}" target="_blank" rel="noopener noreferrer" class="order-btn">
+                                        <span class="ar">اطلب الآن</span>
+                                        <span class="en">Order Now</span>
+                                    </a>
+                                </div>
+                            `;
+                        }).join("")}
+                    </div>
+                </section>
+            `).join("");
+        }
+
+        function toggleLang() {
+            const html = document.documentElement;
+            if (html.getAttribute("lang") === "ar") {
+                html.setAttribute("lang", "en");
+                html.setAttribute("dir", "ltr");
+            } else {
+                html.setAttribute("lang", "ar");
+                html.setAttribute("dir", "rtl");
+            }
+        }
+
+        renderStore();
+    </script>
+</body>
+</html>
